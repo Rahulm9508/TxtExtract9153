@@ -1,25 +1,4 @@
-#  MIT License
-#
-#  Copyright (c) 2019-present Dan <https://github.com/delivrance>
-#
-#  Permission is hereby granted, free of charge, to any person obtaining a copy
-#  of this software and associated documentation files (the "Software"), to deal
-#  in the Software without restriction, including without limitation the rights
-#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-#  copies of the Software, and to permit persons to whom the Software is
-#  furnished to do so, subject to the following conditions:
-#
-#  The above copyright notice and this permission notice shall be included in all
-#  copies or substantial portions of the Software.
-#
-#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-#  SOFTWARE
-#  Code edited By Cryptostark
+
 import urllib
 import urllib.parse
 import requests
@@ -59,7 +38,7 @@ async def account_login(bot: Client, m: Message):
     input01: Message = await bot.listen(editable.chat.id)
     Ins = input01.text
     editable = await m.reply_text("Send **ID & Password** in this manner otherwise bot will not respond.\n\nSend like this:-  **ID*Password**")
-    rwa_url = "https://"+Ins+"/post/login"
+    rwa_url = "https://"+Ins+"/post/userlogin"
     hdr = {"Client-Service": "Appx",
            "Auth-Key": "appxapi",
            "User-ID": "-2",
@@ -67,9 +46,9 @@ async def account_login(bot: Client, m: Message):
            "User_app_category": "",
            "Language": "en",
            "Content-Type": "application/x-www-form-urlencoded",
-           "Content-Length": "236",
+           "Content-Length": "732",
            "Accept-Encoding": "gzip, deflate",
-           "User-Agent": "okhttp/4.9.1"
+           "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
            }
     info = {"email": "", "password": ""}
     input1: Message = await bot.listen(editable.chat.id)
@@ -93,7 +72,7 @@ async def account_login(bot: Client, m: Message):
                 "User_app_category": "",
                 "Language": "en",
                 "Host": "lastexamapi.teachx.in",
-                "User-Agent": "okhttp/4.9.1"
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
                 }
     elif Ins == ("missionapi.appx.co.in"):
         hdr1 = {
@@ -104,7 +83,7 @@ async def account_login(bot: Client, m: Message):
                 "User_app_category": "",
                 "Language": "en",
                 "Host": "missionapi.appx.co.in",
-                "User-Agent": "okhttp/4.9.1"
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
                 }
     elif Ins == ("rozgarapinew.teachx.in"):
         hdr1 = {
@@ -115,7 +94,7 @@ async def account_login(bot: Client, m: Message):
                 "User_app_category": "",
                 "Language": "en",
                 "Host": "rozgarapinew.teachx.in",
-                "User-Agent": "okhttp/4.9.1"
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
                 }
     else:
         await editable.edit("**Header Not Valid**")
@@ -134,8 +113,7 @@ async def account_login(bot: Client, m: Message):
         if len(f'{cool}{aa}') > 4096:
             print(aa)
             cool = ""
-        cool += aa
-    await editable.edit(f'{"**You have these batches :-**"}\n\n{FFF}\n\n{cool}')
+    await editable.edit(f'{"**You have these batches :-**"}\n\n{aa}\n\n{FFF}')
     editable1 = await m.reply_text("**Now send the Batch ID to Download**")
     input2 = message = await bot.listen(editable.chat.id)
     raw_text2 = input2.text
@@ -152,16 +130,16 @@ async def account_login(bot: Client, m: Message):
 
     res3 = requests.get("https://"+Ins+"/get/alltopicfrmlivecourseclass?courseid="+raw_text2,"&subjectid="+raw_text3, headers=hdr1)
     b_data2 = res3.json()['data']
-    # print(b_data2)
+    print(b_data2)
     vj = ""
     for data in b_data2:
         tids = (data["topicid"])
         idid = f"{tids}&"
         if len(f"{vj}{idid}") > 9999:
-            ##await m.reply_text(idid)
+            await m.reply_text(idid)
             vj = ""
         vj += idid
-    #print(vj)
+    print(vj)
     vp = ""
     for data in b_data2:
         tn = (data["topic_name"])
@@ -170,7 +148,7 @@ async def account_login(bot: Client, m: Message):
             ##await m.reply_text(tns)
             vp = ""
         vp += tns
-    #print(vp)
+    print(vp)
     cool1 = ""
     #BBB = ''
     for data in b_data2:
