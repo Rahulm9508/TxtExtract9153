@@ -33,16 +33,15 @@ async def account_login(bot: Client, m: Message):
     raw_text = input1.text
     
     headers = {
-            'Host': 'api.penpencil.xyz',
-            'authorization': 'Bearer c5c5e9c5721a1c4e322250fb31825b62f9715a4572318de90cfc93b02a8a8a75',
-            'client-id': '5f439b64d553cc02d283e1b4',
-            'client-version': '21.0',
-            'user-agent': 'Android',
-            'randomid': '385bc0ce778e8d0b',
-            'client-type': 'MOBILE',
-            'device-meta': '{APP_VERSION:19.0,DEVICE_MAKE:Asus,DEVICE_MODEL:ASUS_X00TD,OS_VERSION:6,PACKAGE_NAME:xyz.penpencil.khansirofficial}',
-            'content-type': 'application/json; charset=UTF-8'}
-
+            "Host": "admin2.khanglobalstudies.com",
+        "authorization": f"Bearer {token}",
+        "client-id": "5f439b64d553cc02d283e1b4",
+        "client-version": "21.0",
+        "user-agent": "Android",
+        "randomid": "385bc0ce778e8d0b",
+        "client-type": "MOBILE",
+        "device-meta": "{APP_VERSION:19.0,DEVICE_MAKE:Asus,DEVICE_MODEL:ASUS_X00TD,OS_VERSION:6,PACKAGE_NAME:xyz.penpencil.khansirofficial}",
+        "content-type": "application/json; charset=UTF-8",
     info = {
   "username": "",
   "otp": "",
