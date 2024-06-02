@@ -61,10 +61,10 @@ async def account_login(bot: Client, m: Message):
         token = data["data"]["access_token"]
         await editable.edit(f"**Login Successful:** ```{token}```")
     else:
-         await m.reply_text("Go back to response")
+         await m.reply_text("https://admin2.khanglobalstudies.com/api/user/v2/courses?medium=0")
     headers = {
             'Host': 'admin2.khanglobalstudies.com',
-            'authorization': f"Bearer {token}",
+            'authorization': f"Bearer {token}}",
             'client-id': '5f439b64d553cc02d283e1b4',
             'client-version': '21.0',
             'user-agent': 'Android',
