@@ -33,7 +33,7 @@ async def account_login(bot: Client, m: Message):
     raw_text = input1.text
     
     headers = {
-            'Host': 'admin2.khanglobalstudies.com',
+            'Host': 'api.penpencil.xyz',
             'authorization': 'Bearer c5c5e9c5721a1c4e322250fb31825b62f9715a4572318de90cfc93b02a8a8a75',
             'client-id': '5f439b64d553cc02d283e1b4',
             'client-version': '21.0',
@@ -63,8 +63,8 @@ async def account_login(bot: Client, m: Message):
     else:
          await m.reply_text("https://admin2.khanglobalstudies.com/api/user/v2/courses?medium=0")
     headers = {
-            'Host': 'admin2.khanglobalstudies.com',
-            'authorization': f"Bearer {token}}",
+            'Host': 'api.penpencil.xyz',
+            'authorization': f"Bearer {token}",
             'client-id': '5f439b64d553cc02d283e1b4',
             'client-version': '21.0',
             'user-agent': 'Android',
