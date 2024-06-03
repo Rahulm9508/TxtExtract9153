@@ -33,7 +33,7 @@ async def account_login(bot: Client, m: Message):
     raw_text = input1.text
     
     headers = {
-            'Host': 'api.penpencil.xyz',
+            'Host': 'admin2.khanglobalstudies.com',
             'authorization': 'Bearer c5c5e9c5721a1c4e322250fb31825b62f9715a4572318de90cfc93b02a8a8a75',
             'client-id': '5f439b64d553cc02d283e1b4',
             'client-version': '21.0',
@@ -61,9 +61,9 @@ async def account_login(bot: Client, m: Message):
         token = data["data"]["access_token"]
         await editable.edit(f"**Login Successful:** ```{token}```")
     else:
-         await m.reply_text("title")
+         await m.reply_text("Go back to response")
     headers = {
-            'Host': 'api.penpencil.xyz',
+            'Host': 'admin2.khanglobalstudies.com',
             'authorization': f"Bearer {token}",
             'client-id': '5f439b64d553cc02d283e1b4',
             'client-version': '21.0',
@@ -85,7 +85,7 @@ async def account_login(bot: Client, m: Message):
     mm = "KhanSir"
     for data in response:
         FFF = "**BATCH-ID  -  BATCH NAME**"
-        #batch=(data["id"])
+        #batch=(data["name"])
         aa = f" ```{data['_id']}```      - **{data['name']}**\n\n"
         #aa=f"```{data['name']}```  :  ```{data['_id']}\n```"
         if len(f'{cool}{aa}') > 4096:
