@@ -61,7 +61,7 @@ async def account_login(bot: Client, m: Message):
         token = data["data"]["access_token"]
         await editable.edit(f"**Login Successful:** ```{token}```")
     else:
-         await m.reply_text("https://admin2.khanglobalstudies.com/api/user/v2/courses?medium=0")
+         await m.reply_text("title")
     headers = {
             'Host': 'api.penpencil.xyz',
             'authorization': f"Bearer {token}",
@@ -85,7 +85,7 @@ async def account_login(bot: Client, m: Message):
     mm = "KhanSir"
     for data in response:
         FFF = "**BATCH-ID  -  BATCH NAME**"
-        #batch=(data["name"])
+        #batch=(data["id"])
         aa = f" ```{data['_id']}```      - **{data['name']}**\n\n"
         #aa=f"```{data['name']}```  :  ```{data['_id']}\n```"
         if len(f'{cool}{aa}') > 4096:
